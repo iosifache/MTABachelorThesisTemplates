@@ -1,0 +1,48 @@
+\begin{titlepage}
+    \begin{center}
+
+        \textbf{\detailcountry} \\
+        \textbf{\detailparentinstitution} \\
+        \textbf{\detailuniversity} \\
+
+        \vspace*{0.5cm}
+
+        \textbf{\detailfaculty} \\
+        \textbf{\detailspecialization} \\
+
+        \vspace*{1.5cm}
+
+        \includegraphics[width=0.4\textwidth]{components/images/ATM.png}
+
+        \vspace*{1.5cm}
+
+        \large{\textbf{\detailtitle}}
+
+        \vspace*{0.5cm}
+
+        \normalsize
+        \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+            \textbf{Coordonator Științific} & \textbf{Absolvent}\\
+            \footnotesize \detailadviser & \footnotesize \detailauthor
+        \end{tabular*}
+
+        \ifdefined\componentinventary
+            \vspace*{1.5cm}
+            
+            \small
+            \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+                & \small Conține \rule{1cm}{0.1pt} file \\
+                & \small Inventariat sub numărul \rule{1cm}{0.1pt} \\
+                & \small Cu poziția din indicator \rule{1cm}{0.1pt} \\
+                & \small Cu termen de păstrare \rule{2cm}{0.1pt}
+            \end{tabular*}
+        \else
+            \vspace*{3cm}
+        \fi
+
+        \vspace*{1.5cm}
+        \textbf{\detailcity} \\
+        \textbf{\detaildate}
+
+    \end{center}
+\end{titlepage}

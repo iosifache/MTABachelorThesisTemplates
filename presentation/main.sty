@@ -1,0 +1,73 @@
+\ProvidesPackage{main}
+
+% Packages
+\usepackage{caption}
+\usepackage[english]{babel}
+\usepackage[export]{adjustbox}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8x]{inputenc}
+\usepackage{xcolor}
+
+% Presentation setup
+\mode<presentation>{
+  \usetheme{default}
+  \usecolortheme{structure}
+  \usefonttheme{default}
+  \setbeamertemplate{caption}[numbered]	
+}
+\definecolor{lightgray}{HTML}{ecf0f1}
+\setbeamertemplate{frametitle}{\nointerlineskip  
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.75ex,dp=1.375ex]{frametitle}
+        \hspace*{2ex} \small \bfseries \insertframetitle \hfill {\color{lightgray} \insertframenumber} \hspace*{1ex}%
+    \end{beamercolorbox}\par\vskip-1pt\hrulefill}
+\setbeamerfont{frametitle}{size=\normalsize}
+\setbeamerfont{footnote}{size=\tiny}
+
+% Images path
+\graphicspath{components/images}
+
+% Custom labels
+\addto\captionsenglish{\renewcommand{\figurename}{Imagine}}
+\captionsetup[table]{name=Tabel}
+
+% Custom command for bold and italic text
+\newcommand{\textbfit}[1]{\textbf{\textit{#1}}}
+
+% Custom command for inline code
+\newenvironment{codeenv}{\fontfamily{cmtt}\selectfont}{\par}
+\DeclareTextFontCommand{\inlinecodenonboxed}{\codeenv}
+\newcommand{\inlinecode}[1]{\mbox{\inlinecodenonboxed{#1}}}
+
+% Custom command for shortening the presentation
+\newif\ifshowextras
+\showextrasfalse
+\newcommand{\extras}[1]{\ifshowextras #1 \fi}
+
+% Details about the thesis
+\newcommand{\detaildate}{}
+\newcommand{\detailcountry}{}
+\newcommand{\detailcity}{}
+\newcommand{\detailparentinstitution}{}
+\newcommand{\detailuniversity}{}
+\newcommand{\detailfaculty}{}
+\newcommand{\detailspecialization}{}
+\newcommand{\detailtitle}{}
+\newcommand{\detailauthor}{}
+\newcommand{\detailadviser}{}
+
+% Commands for setting the details
+\newcommand{\setdetaildate}[1]{\renewcommand{\detaildate}{#1}}
+\newcommand{\setdetailcountry}[1]{\renewcommand{\detailcountry}{#1}}
+\newcommand{\setdetailcity}[1]{\renewcommand{\detailcity}{#1}}
+\newcommand{\setdetailparentinstitution}[1]{\renewcommand{\detailparentinstitution}{#1}}
+\newcommand{\setdetailuniversity}[1]{\renewcommand{\detailuniversity}{#1}}
+\newcommand{\setdetailfaculty}[1]{\renewcommand{\detailfaculty}{#1}}
+\newcommand{\setdetailspecialization}[1]{\renewcommand{\detailspecialization}{#1}}
+\newcommand{\setdetailtitle}[1]{\renewcommand{\detailtitle}{#1}}
+\newcommand{\setdetailauthor}[1]{\renewcommand{\detailauthor}{#1}}
+\newcommand{\setdetailadviser}[1]{\renewcommand{\detailadviser}{#1}}
+
+% User's details
+\input{configuration}

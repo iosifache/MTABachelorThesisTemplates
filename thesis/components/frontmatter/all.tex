@@ -1,0 +1,36 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{frontmatter}
+
+% Title
+\input{components/frontmatter/title}
+
+% Acknowledgment
+\input{components/frontmatter/acknowledgment}
+
+% Adviser's resume
+\setcounter{page}{1}
+\ifdefined\componentadviserresume
+    \input{components/frontmatter/adviser_resume}
+\fi
+
+% Specification
+\ifdefined\componentspecification
+    \input{components/frontmatter/specification}
+\fi
+
+% Abstract
+\input{components/frontmatter/abstract}
+
+% Table of content
+\setcounter{secnumdepth}{3}
+\tableofcontents
+
+% List of figures
+\pagestyle{front}\listoffigures
+\newpage \
+
+% Abbreviations
+\input{components/frontmatter/abbreviations}
+
+\end{frontmatter}
